@@ -27,10 +27,9 @@ form > * {
   margin-bottom: 20px;
 }
 .expenseForm {
-  background: #1abc9c;
+  background: #ecf0f1;
   padding: 20px;
   border-radius: 10px;
   margin: 20px;
-  color: #fff;
 }
 </style>
