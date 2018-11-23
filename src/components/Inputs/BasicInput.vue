@@ -3,7 +3,7 @@
     <label for="expenseDetails" class="col-sm-2 col-form-label">{{
       labelTxt
     }}</label>
-    <div class="col-sm-10">
+    <div class="col-sm-4">
       <input type="text" class="form-control" :placeholder="placeholderTxt" />
     </div>
   </div>
