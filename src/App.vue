@@ -1,5 +1,7 @@
 <template>
-  <div id="app"><NavigationBar :appName="appName" /> <BasicForm /></div>
+  <div id="app">
+    <NavigationBar :appName="appName" :navLinks="navLinks" /> <BasicForm />
+  </div>
 </template>
 
 <script>
@@ -15,7 +17,8 @@ export default {
   },
   data: function() {
     return {
-      appName: "papel"
+      appName: "papel",
+      navLinks: ["Home", "About", "Contact"]
     };
   }
 };

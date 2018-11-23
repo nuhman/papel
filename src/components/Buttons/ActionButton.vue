@@ -1,5 +1,5 @@
 <template>
-  <button type="submit" @click.prevent="asd" class="btn btn-primary">
+  <button type="submit" @click.prevent="asd" class="btn btn-outline-primary">
     {{ btnText }}
   </button>
 </template>
