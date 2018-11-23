@@ -1,14 +1,13 @@
 <template>
   <div class="row">
     <label for="expenseDetails" class="col-sm-2 col-form-label"> Date </label>
-    <div class="col-sm-2">
+    <div class="col-lg-2 col-md-4 col-sm-4">
       <date-picker v-model="date" :config="options"></date-picker>
     </div>
   </div>
 </template>
 
 <script>
-import $ from "jquery";
 // Import this component
 import datePicker from "vue-bootstrap-datetimepicker";
 
