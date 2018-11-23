@@ -1,16 +1,22 @@
 <template>
-  <div id="app"><BasicForm /></div>
+  <div id="app"><NavigationBar :appName="appName" /> <BasicForm /></div>
 </template>
 
 <script>
 //import HelloWorld from "./components/HelloWorld";
 import BasicForm from "./components/Forms/BasicForm";
-
+import NavigationBar from "./components/NavigationBar/NavigationBar";
 export default {
   name: "App",
   components: {
     //HelloWorld,
-    BasicForm
+    BasicForm,
+    NavigationBar
+  },
+  data: function() {
+    return {
+      appName: "papel"
+    };
   }
 };
 </script>
@@ -22,10 +28,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   /*text-align: center;*/
   color: #2c3e50;
-  margin-top: 60px;
-  margin-left: 20px;
-  margin-right: 20px;
 }
+
 /*
 #app > * {
   display: block;
