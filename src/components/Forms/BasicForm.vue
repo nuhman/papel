@@ -1,7 +1,7 @@
 <template>
   <form class="form-group expenseForm">
-    <BasicInput placeholderTxt="Dinner at Avi's" labelTxt="Expense details" />
-    <BasicInput placeholderTxt="250" labelTxt="Expense (in Rs.)" />
+    <BasicInput placeholderTxt="Dinner at Avi's" labelTxt="Description" />
+    <BasicInput placeholderTxt="250" labelTxt="Cost (in Rs.)" /> <DatePicker />
     <ActionButton btnText="ADD" />
   </form>
 </template>
@@ -9,6 +9,7 @@
 <script>
 //import HelloWorld from "./components/HelloWorld";
 import BasicInput from "../Inputs/BasicInput";
+import DatePicker from "../Inputs/DatePicker";
 import ActionButton from "../Buttons/ActionButton";
 
 export default {
@@ -16,6 +17,7 @@ export default {
   components: {
     //HelloWorld,
     BasicInput,
+    DatePicker,
     ActionButton
   }
 };
