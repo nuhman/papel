@@ -1,9 +1,9 @@
 <template>
-  <div class="form-group">
+  <form class="form-group expenseForm">
     <BasicInput placeholderTxt="Dinner at Avi's" labelTxt="Expense details" />
     <BasicInput placeholderTxt="250" labelTxt="Expense (in Rs.)" />
     <ActionButton btnText="ADD" />
-  </div>
+  </form>
 </template>
 
 <script>
@@ -23,7 +23,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-div > * {
+form > * {
   margin-bottom: 20px;
+}
+.expenseForm {
+  background: #bdc3c7;
+  padding: 20px;
+  border-radius: 10px;
 }
 </style>
