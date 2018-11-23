@@ -1,17 +1,16 @@
 <template>
-  <div id="app">
-    <img width="25%" src="./assets/logo.png">
-    <HelloWorld/>
-  </div>
+  <div id="app"><BasicForm /></div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
+//import HelloWorld from "./components/HelloWorld";
+import BasicForm from "./components/Forms/BasicForm";
 
 export default {
   name: "App",
   components: {
-    HelloWorld
+    //HelloWorld,
+    BasicForm
   }
 };
 </script>
@@ -21,8 +20,16 @@ export default {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /*text-align: center;*/
   color: #2c3e50;
   margin-top: 60px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
+/*
+#app > * {
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+}*/
 </style>
