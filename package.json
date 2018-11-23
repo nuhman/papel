@@ -1,7 +1,7 @@
 {
-  "name": "test-project",
+  "name": "papel",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "An expense manager in Vue.js",
   "main": "src/main.js",
   "private": true,
   "scripts": {
