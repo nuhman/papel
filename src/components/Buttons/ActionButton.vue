@@ -1,5 +1,7 @@
 <template>
-  <button class="btn btn-primary">{{ btnText }}</button>
+  <button type="submit" @click.prevent="asd" class="btn btn-primary">
+    {{ btnText }}
+  </button>
 </template>
 
 <script>
@@ -8,6 +10,11 @@ export default {
   props: ["btnText"],
   data() {
     return {};
+  },
+  methods: {
+    asd: function() {
+      alert("hi");
+    }
   }
 };
 </script>
