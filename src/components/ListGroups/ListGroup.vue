@@ -22,7 +22,9 @@
 
 <script>
 export default {
-  props: ["expenseStore"],
+  props: {
+    expenseStore: Object
+  },
   name: "ListGroup",
   data() {
     return {

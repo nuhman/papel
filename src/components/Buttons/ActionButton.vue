@@ -7,7 +7,9 @@
 <script>
 export default {
   name: "ActionButton",
-  props: ["btnText"],
+  props: {
+    btnText: String
+  },
   data() {
     return {};
   },

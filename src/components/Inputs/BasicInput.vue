@@ -11,7 +11,10 @@
 
 <script>
 export default {
-  props: ["placeholderTxt", "labelTxt"],
+  props: {
+    placeholderTxt: String,
+    labelTxt: String
+  },
   name: "BasicInput",
   data() {
     return {
