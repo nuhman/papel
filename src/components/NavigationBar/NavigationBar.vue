@@ -25,7 +25,10 @@
 <script>
 export default {
   name: "NavigationBar",
-  props: ["appName", "navLinks"],
+  props: {
+    appName: String,
+    navLinks: Array
+  },
   data() {
     return {};
   }
