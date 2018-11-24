@@ -23,7 +23,10 @@
 <script>
 export default {
   props: {
-    expenseStore: Object
+    expenseStore: {
+      type: Object,
+      required: true
+    }
   },
   name: "ListGroup",
   data() {

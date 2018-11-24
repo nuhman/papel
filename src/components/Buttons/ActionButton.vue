@@ -8,7 +8,10 @@
 export default {
   name: "ActionButton",
   props: {
-    btnText: String
+    btnText: {
+      type: String,
+      required: true
+    }
   },
   data() {
     return {};
