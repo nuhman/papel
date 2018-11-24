@@ -14,7 +14,9 @@
           <small>{{ expense.date }}</small>
         </div>
         <p class="mb-1">Rs. {{ expense.cost }}</p>
-        <small v-for="(tag, i) in expense.tags" :key="i">{{ tag }} </small>
+        <small class="tags" v-for="(tag, i) in expense.tags" :key="i"
+          ><a href="">{{ tag }} </a></small
+        >
       </a>
     </div>
   </div>
@@ -24,7 +26,7 @@
 export default {
   props: {
     expenseStore: {
-      type: Object,
+      type: Array,
       required: true
     }
   },
@@ -41,5 +43,10 @@ export default {
 <style scoped>
 div {
   margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.tags {
+  margin-right: 10px;
 }
 </style>
