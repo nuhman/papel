@@ -1,7 +1,11 @@
 <template>
   <div id="app">
-    <NavigationBar :appName="appName" :navLinks="navLinks" /> <BasicForm />
-    <ListGroup :expenseStore="expenseStore" />
+    <NavigationBar :appName="appName" :navLinks="navLinks" />
+    <router-view :expenseStore="expenseStore"></router-view>
+    <!--
+      <BasicForm />
+      <ListGroup :expenseStore="expenseStore" />
+    -->
   </div>
 </template>
 
