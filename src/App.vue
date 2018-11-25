@@ -33,7 +33,7 @@ export default {
         },
         {
           title: "Add New Expense",
-          url: "/"
+          url: "/add"
         },
         {
           title: "View All Expenses",
@@ -41,11 +41,11 @@ export default {
         },
         {
           title: "About",
-          url: "/"
+          url: "/aboutus"
         },
         {
           title: "Contact",
-          url: "/"
+          url: "/contactus"
         }
       ],
       expenseStore: [
