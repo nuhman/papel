@@ -1,9 +1,14 @@
 import ListGroup from "./components/ListGroups/ListGroup";
 import BasicForm from "./components/Forms/BasicForm";
+import MastHead from "./components/MastHead/MastHead";
 
 export const routes = [
   {
-    path: "",
+    path: "/",
+    component: MastHead
+  },
+  {
+    path: "/add",
     component: BasicForm
   },
   {
