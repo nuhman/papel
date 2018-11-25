@@ -26,7 +26,28 @@ export default {
   data: function() {
     return {
       appName: "papel",
-      navLinks: ["Home", "About", "Contact"],
+      navLinks: [
+        {
+          title: "Home",
+          url: "/"
+        },
+        {
+          title: "Add New Expense",
+          url: "/"
+        },
+        {
+          title: "View All Expenses",
+          url: "/expenses"
+        },
+        {
+          title: "About",
+          url: "/"
+        },
+        {
+          title: "Contact",
+          url: "/"
+        }
+      ],
       expenseStore: [
         {
           desc: "lunch",
