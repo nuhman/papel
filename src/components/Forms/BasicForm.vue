@@ -1,8 +1,17 @@
 <template>
   <form class="form-group expenseForm">
-    <BasicInput placeholderTxt="Dinner at Avi's" labelTxt="Description" />
-    <BasicInput placeholderTxt="250" labelTxt="Cost (in Rs.)" /> <DatePicker />
-    <ActionButton btnText="ADD" />
+    <BasicInput
+      :inputTxt="newExpense.desc"
+      placeholderTxt="Dinner at Avi's"
+      labelTxt="Description"
+    />
+    <BasicInput
+      :inputTxt="newExpense.cost"
+      placeholderTxt="250"
+      labelTxt="Cost (in Rs.)"
+    />
+    <DatePicker :dateTxt="newExpense.date" />
+    <ActionButton :handleClick="addExpense" btnText="ADD" />
   </form>
 </template>
 
@@ -19,6 +28,20 @@ export default {
     BasicInput,
     DatePicker,
     ActionButton
+  },
+  data: function() {
+    return {
+      newExpense: {
+        desc: "def",
+        cost: "000",
+        date: "12/1/2018"
+      }
+    };
+  },
+  methods: {
+    addExpense: function() {
+      alert("adding..." + this.newExpense.desc);
+    }
   }
 };
 </script>
