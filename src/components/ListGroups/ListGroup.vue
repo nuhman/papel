@@ -33,7 +33,8 @@ export default {
   name: "ListGroup",
   data() {
     return {
-      btnText: "ADD"
+      btnText: "ADD",
+      newExpense: {}
     };
   }
 };

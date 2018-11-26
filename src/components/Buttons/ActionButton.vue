@@ -1,5 +1,9 @@
 <template>
-  <button type="submit" @click.prevent="asd" class="btn btn-outline-primary">
+  <button
+    type="submit"
+    @click.prevent="handleClick"
+    class="btn btn-outline-primary"
+  >
     {{ btnText }}
   </button>
 </template>
@@ -11,15 +15,13 @@ export default {
     btnText: {
       type: String,
       required: true
+    },
+    handleClick: {
+      type: Function
     }
   },
   data() {
     return {};
-  },
-  methods: {
-    asd: function() {
-      alert("hi");
-    }
   }
 };
 </script>

@@ -2,7 +2,11 @@
   <div class="row">
     <label for="expenseDetails" class="col-sm-2 col-form-label"> Date </label>
     <div class="col-lg-2 col-md-4 col-sm-4">
-      <date-picker v-model="date" :config="options"></date-picker>
+      <date-picker
+        :dateTxt="date"
+        v-model="date"
+        :config="options"
+      ></date-picker>
     </div>
   </div>
 </template>
@@ -15,6 +19,9 @@ import datePicker from "vue-bootstrap-datetimepicker";
 import "pc-bootstrap4-datetimepicker/build/css/bootstrap-datetimepicker.css";
 
 export default {
+  props: {
+    dateTxt: String
+  },
   name: "DatePicker",
   data() {
     return {
