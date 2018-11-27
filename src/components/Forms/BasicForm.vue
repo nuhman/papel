@@ -40,7 +40,8 @@ export default {
     return {
       descTxt: "",
       costTxt: "",
-      tagsTxt: ""
+      tagsTxt: "",
+      tagToolTip: "Press `enter` or `return` to add a tag"
     };
   },
   methods: {

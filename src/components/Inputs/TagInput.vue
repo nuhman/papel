@@ -1,8 +1,13 @@
 <template>
   <div class=" row">
-    <label for="expenseDetails" class="col-sm-2 col-form-label">{{
-      labelTxt
-    }}</label>
+    <label for="expenseDetails" class="col-sm-2 col-form-label"
+      >{{ labelTxt }}
+      <i
+        data-toggle="tooltip"
+        title="Hooray!"
+        class="zmdi zmdi-info zmdi-hc-lg"
+      ></i>
+    </label>
     <div class="col-lg-4 col-md-4 col-sm-4">
       <vue-tags-input
         :placeholder="placeholderTxt"
