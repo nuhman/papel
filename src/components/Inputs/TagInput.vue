@@ -2,11 +2,7 @@
   <div class=" row">
     <label for="expenseDetails" class="col-sm-2 col-form-label"
       >{{ labelTxt }}
-      <i
-        data-toggle="tooltip"
-        title="Hooray!"
-        class="zmdi zmdi-info zmdi-hc-lg"
-      ></i>
+      <i :title="tagToolTip" class="zmdi zmdi-info zmdi-hc-lg"></i>
     </label>
     <div class="col-lg-4 col-md-4 col-sm-4">
       <vue-tags-input
@@ -29,8 +25,10 @@ export default {
   props: {
     placeholderTxt: String,
     labelTxt: String,
-    value: String
+    value: String,
+    tagToolTip: String
   },
+
   name: "TagInput",
   data() {
     return {
