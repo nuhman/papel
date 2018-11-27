@@ -2,10 +2,6 @@
   <div id="app">
     <NavigationBar :appName="appName" :navLinks="navLinks" />
     <router-view :expenseStore="expenseStore"></router-view>
-    <!--
-      <BasicForm />
-      <ListGroup :expenseStore="expenseStore" />
-    -->
   </div>
 </template>
 
@@ -40,11 +36,4 @@ export default {
   /*text-align: center;*/
   color: #2c3e50;
 }
-
-/*
-#app > * {
-  display: block;
-  margin: 0 auto;
-  margin-top: 20px;
-}*/
 </style>

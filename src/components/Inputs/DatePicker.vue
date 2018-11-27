@@ -2,11 +2,7 @@
   <div class="row">
     <label for="expenseDetails" class="col-sm-2 col-form-label"> Date </label>
     <div class="col-lg-2 col-md-4 col-sm-4">
-      <date-picker
-        :dateTxt="date"
-        v-model="date"
-        :config="options"
-      ></date-picker>
+      <date-picker class="dp" v-model="date" :config="options"></date-picker>
     </div>
   </div>
 </template>
@@ -14,14 +10,14 @@
 <script>
 // Import this component
 import datePicker from "vue-bootstrap-datetimepicker";
+// Import Jquery
+import $ from "jquery";
 
 // Import date picker css
 import "pc-bootstrap4-datetimepicker/build/css/bootstrap-datetimepicker.css";
 
 export default {
-  props: {
-    dateTxt: String
-  },
+  props: {},
   name: "DatePicker",
   data() {
     return {
@@ -34,6 +30,48 @@ export default {
   },
   components: {
     datePicker
+  },
+  mounted: function() {
+    // fires when the component is mounted for first time
+
+    // get a reference to `this`.
+    var self = this;
+
+    // initialize state.currentDate
+    self.$store.state.currentDate = this.convertToDateTxt(self.date);
+
+    // initialize datetimepicker
+    $(".dp").datetimepicker();
+
+    // listen to any changes in datetimepicker widget,
+    // and update state.currentDate with that
+    $(".dp")
+      .datetimepicker()
+      .on("dp.change", function(e) {
+        var newDate = e.date.format(e.date._f);
+        self.date = newDate;
+        self.$store.state.currentDate = newDate;
+      });
+  },
+  methods: {
+    convertToDateTxt(today) {
+      // given a `Date()` object (para: today),
+      // returns a string representaion of
+      // the form `dd/mm/yyyy`.
+
+      var dd = today.getDate();
+      var mm = today.getMonth() + 1; //January is 0!
+
+      var yyyy = today.getFullYear();
+      if (dd < 10) {
+        dd = "0" + dd;
+      }
+      if (mm < 10) {
+        mm = "0" + mm;
+      }
+      today = dd + "/" + mm + "/" + yyyy;
+      return today;
+    }
   }
 };
 </script>
