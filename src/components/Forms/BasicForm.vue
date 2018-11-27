@@ -15,6 +15,7 @@
       v-model="tagsTxt"
       placeholderTxt="taco, family, misc"
       labelTxt="Tags"
+      :tagToolTip="tagToolTip"
     />
     <ActionButton :handleClick="addExpense" btnText="ADD" />
   </form>
