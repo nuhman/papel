@@ -48,11 +48,11 @@ export const appstore = {
       }
     ],
 
-    cuurentExpenseObj: {
+    currentExpenseObj: {
       desc: "",
       cost: "",
       date: "",
-      tags: ""
+      tags: []
     }
   },
   mutations: {
