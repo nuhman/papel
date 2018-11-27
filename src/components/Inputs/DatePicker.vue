@@ -38,7 +38,7 @@ export default {
     var self = this;
 
     // initialize state.currentDate
-    self.$store.state.currentDate = this.convertToDateTxt(self.date);
+    self.$store.state.currentExpenseObj.date = this.convertToDateTxt(self.date);
 
     // initialize datetimepicker
     $(".dp").datetimepicker();
@@ -50,7 +50,7 @@ export default {
       .on("dp.change", function(e) {
         var newDate = e.date.format(e.date._f);
         self.date = newDate;
-        self.$store.state.currentDate = newDate;
+        self.$store.state.currentExpenseObj.date = newDate;
       });
   },
   methods: {
