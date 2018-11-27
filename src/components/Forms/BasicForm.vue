@@ -1,17 +1,16 @@
 <template>
   <form class="form-group expenseForm">
     <BasicInput
-      :inputTxt="newExpense.desc"
+      v-model="descTxt"
       placeholderTxt="Dinner at Avi's"
       labelTxt="Description"
     />
     <BasicInput
-      :inputTxt="newExpense.cost"
+      v-model="costTxt"
       placeholderTxt="250"
       labelTxt="Cost (in Rs.)"
     />
-    <DatePicker :dateTxt="newExpense.date" />
-    <ActionButton :handleClick="addExpense" btnText="ADD" />
+    <DatePicker /> <ActionButton :handleClick="addExpense" btnText="ADD" />
   </form>
 </template>
 
@@ -31,16 +30,21 @@ export default {
   },
   data: function() {
     return {
-      newExpense: {
-        desc: "def",
-        cost: "000",
-        date: "12/1/2018"
-      }
+      descTxt: "",
+      costTxt: ""
     };
   },
   methods: {
     addExpense: function() {
-      alert("adding..." + this.newExpense.desc);
+      if (!!this.descTxt && !!this.costTxt && !!this.$store.state.currentDate) {
+        this.$store.state.expenseStore.push({
+          desc: this.descTxt,
+          cost: this.costTxt,
+          date: this.$store.state.currentDate,
+          tags: ["#data", "#personal"]
+        });
+      }
+      return;
     }
   }
 };

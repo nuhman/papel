@@ -4,7 +4,13 @@
       labelTxt
     }}</label>
     <div class="col-lg-4 col-md-4 col-sm-4">
-      <input type="text" class="form-control" :placeholder="placeholderTxt" />
+      <input
+        type="text"
+        v-bind:value="value"
+        class="form-control"
+        :placeholder="placeholderTxt"
+        v-on:input="updateValue($event.target.value);"
+      />
     </div>
   </div>
 </template>
@@ -13,13 +19,19 @@
 export default {
   props: {
     placeholderTxt: String,
-    labelTxt: String
+    labelTxt: String,
+    value: String
   },
   name: "BasicInput",
   data() {
     return {
       btnText: "ADD"
     };
+  },
+  methods: {
+    updateValue: function(value) {
+      this.$emit("input", value);
+    }
   }
 };
 </script>

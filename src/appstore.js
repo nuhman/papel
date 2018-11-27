@@ -1,6 +1,9 @@
 export const appstore = {
   state: {
+    debug: true,
     appName: "papel",
+    currentDate: "",
+
     navLinks: [
       {
         title: "Home",
@@ -23,6 +26,7 @@ export const appstore = {
         url: "/contactus"
       }
     ],
+
     expenseStore: [
       {
         desc: "lunch",
@@ -42,11 +46,19 @@ export const appstore = {
         date: "22/11/2018",
         tags: ["#data", "#personal"]
       }
-    ]
+    ],
+
+    cuurentExpenseObj: {
+      desc: "",
+      cost: "",
+      date: "",
+      tags: ""
+    }
   },
   mutations: {
-    increment(state) {
-      state.count++;
+    addNewExpense(state) {
+      if (state.debug) console.log("running: addNewExpense");
+      state.expenseStore.push({});
     }
   }
 };
