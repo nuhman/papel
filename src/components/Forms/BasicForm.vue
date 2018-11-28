@@ -1,24 +1,32 @@
 <template>
-  <form class="form-group expenseForm">
-    <BasicInput
-      v-model="descTxt"
-      placeholderTxt="Dinner at Avi's"
-      labelTxt="Description"
-    />
-    <BasicInput
-      v-model="costTxt"
-      placeholderTxt="250"
-      labelTxt="Cost (in Rs.)"
-    />
-    <DatePicker />
-    <TagInput
-      v-model="tagsTxt"
-      placeholderTxt="taco, family, misc"
-      labelTxt="Tags"
-      :tagToolTip="tagToolTip"
-    />
-    <ActionButton :handleClick="addExpense" btnText="ADD" />
-  </form>
+  <div>
+    <form class="form-group expenseForm">
+      <BasicInput
+        v-model="descTxt"
+        placeholderTxt="Dinner at Avi's"
+        labelTxt="Description"
+      />
+      <BasicInput
+        v-model="costTxt"
+        placeholderTxt="250"
+        labelTxt="Cost (in Rs.)"
+      />
+      <DatePicker />
+      <TagInput
+        v-model="tagsTxt"
+        placeholderTxt="taco, family, misc"
+        labelTxt="Tags"
+        :tagToolTip="tagToolTip"
+      />
+      <ActionButton
+        data-toggle="modal"
+        data-target="#myModal"
+        :handleClick="addExpense"
+        btnText="ADD"
+      />
+    </form>
+    <modal :modalDetails="modalDetails"></modal>
+  </div>
 </template>
 
 <script>
@@ -27,6 +35,7 @@ import BasicInput from "../Inputs/BasicInput";
 import TagInput from "../Inputs/TagInput";
 import DatePicker from "../Inputs/DatePicker";
 import ActionButton from "../Buttons/ActionButton";
+import modal from "../Modals/modal";
 
 export default {
   name: "BasicForm",
@@ -35,14 +44,27 @@ export default {
     BasicInput,
     TagInput,
     DatePicker,
-    ActionButton
+    ActionButton,
+    modal
   },
   data: function() {
     return {
       descTxt: "",
       costTxt: "",
-      tagsTxt: "",
-      tagToolTip: "Press `enter` or `return` to add a tag"
+      tagsTxt: "s",
+      tagToolTip: "Press `enter` or `return` to add a tag",
+      successfulModal: {
+        header: "Success!",
+        text: "Item added to expenses list"
+      },
+      failureModal: {
+        header: "Sorry!",
+        text: "Please enter all the details"
+      },
+      modalDetails: {
+        header: "",
+        text: ""
+      }
     };
   },
   methods: {
@@ -58,10 +80,17 @@ export default {
         this.$store.state.expenseStore.push(
           this.$store.state.currentExpenseObj
         );
+        this.modalDetails = this.successfulModal;
+        this.descTxt = "";
+        this.costTxt = "";
+        console.log("here: " + this.tagsTxt);
       } else {
-        console.log("errir");
+        this.modalDetails = this.failureModal;
       }
       return;
+    },
+    openModal() {
+      this.$refs.BasicModal.show();
     }
   }
 };
