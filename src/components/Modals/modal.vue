@@ -3,13 +3,20 @@
     <div id="myModal" class="modal fade" role="dialog">
       <div class="modal-dialog">
         <div id="modal" class="modal-content">
-          <div class="modal-header">
+          <div
+            :class="{
+              'modal-header': true,
+              'bg-success': modalDetails.isSuccess,
+              'bg-danger': !modalDetails.isSuccess,
+              'text-white': true
+            }"
+          >
             <h4 class="modal-title">{{ modalDetails.header }}</h4>
-            <button type="button" class="close" data-dismiss="modal">
+            <button type="button" class="close text-white" data-dismiss="modal">
               &times;
             </button>
           </div>
-          <div class="modal-body">
+          <div class="modal-body ">
             <p>{{ modalDetails.text }}</p>
           </div>
         </div>
