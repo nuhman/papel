@@ -54,14 +54,17 @@ export default {
       tagsTxt: "s",
       tagToolTip: "Press `enter` or `return` to add a tag",
       successfulModal: {
+        isSuccess: true,
         header: "Success!",
         text: "Item added to expenses list"
       },
       failureModal: {
+        isSuccess: false,
         header: "Sorry!",
         text: "Please enter all the details"
       },
       modalDetails: {
+        isSuccess: false,
         header: "",
         text: ""
       }
@@ -88,9 +91,6 @@ export default {
         this.modalDetails = this.failureModal;
       }
       return;
-    },
-    openModal() {
-      this.$refs.BasicModal.show();
     }
   }
 };
