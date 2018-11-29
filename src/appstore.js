@@ -56,9 +56,13 @@ export const appstore = {
     }
   },
   mutations: {
-    addNewExpense(state) {
+    addNewExpense(state, newObj) {
       if (state.debug) console.log("running: addNewExpense");
-      state.expenseStore.push({});
+      state.expenseStore.push(newObj);
+    },
+    updateCurrentExpense(state, expObj) {
+      if (state.debug) console.log("running: updateCurrentExpense");
+      state.currentExpenseObj = expObj;
     }
   }
 };

@@ -37,8 +37,11 @@ export default {
     // get a reference to `this`.
     var self = this;
 
-    // initialize state.currentDate
-    self.$store.state.currentExpenseObj.date = this.convertToDateTxt(self.date);
+    // initialize state.currentExpenseObj.date
+    this.$store.commit("updateCurrentExpense", {
+      ...this.$store.state.currentExpenseObj,
+      date: this.convertToDateTxt(self.date)
+    });
 
     // initialize datetimepicker
     $(".dp").datetimepicker();
@@ -50,7 +53,10 @@ export default {
       .on("dp.change", function(e) {
         var newDate = e.date.format(e.date._f);
         self.date = newDate;
-        self.$store.state.currentExpenseObj.date = newDate;
+        self.$store.commit("updateCurrentExpense", {
+          ...self.$store.state.currentExpenseObj,
+          date: newDate
+        });
       });
   },
   methods: {

@@ -30,7 +30,6 @@
 </template>
 
 <script>
-//import HelloWorld from "./components/HelloWorld";
 import BasicInput from "../Inputs/BasicInput";
 import TagInput from "../Inputs/TagInput";
 import DatePicker from "../Inputs/DatePicker";
@@ -40,7 +39,6 @@ import modal from "../Modals/modal";
 export default {
   name: "BasicForm",
   components: {
-    //HelloWorld,
     BasicInput,
     TagInput,
     DatePicker,
@@ -77,12 +75,17 @@ export default {
         !!this.costTxt &&
         !!this.$store.state.currentExpenseObj.date
       ) {
-        this.$store.state.currentExpenseObj.desc = this.descTxt;
-        this.$store.state.currentExpenseObj.cost = this.costTxt;
+        this.$store.commit("updateCurrentExpense", {
+          ...this.$store.state.currentExpenseObj,
+          desc: this.descTxt,
+          cost: this.costTxt
+        });
 
-        this.$store.state.expenseStore.push(
+        this.$store.commit(
+          "addNewExpense",
           this.$store.state.currentExpenseObj
         );
+
         this.modalDetails = this.successfulModal;
         this.descTxt = "";
         this.costTxt = "";
