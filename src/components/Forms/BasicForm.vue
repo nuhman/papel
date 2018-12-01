@@ -48,8 +48,8 @@ export default {
   },
   data: function() {
     return {
-      titleTxt: this.$store.state.currentExpenseObj.title,
-      costTxt: this.$store.state.currentExpenseObj.cost,
+      titleTxt: "",
+      costTxt: "",
       tagsTxt: "",
       tagToolTip: "Press `enter` or `return` to add a tag",
       successfulModal: {
