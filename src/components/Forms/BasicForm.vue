@@ -4,7 +4,7 @@
       <BasicInput
         v-model="titleTxt"
         placeholderTxt="Dinner at Avi's"
-        labelTxt="Description"
+        labelTxt="titleription"
       />
       <BasicInput
         v-model="costTxt"
@@ -89,10 +89,11 @@ export default {
 
         this.modalDetails = this.successfulModal;
 
-        console.log("here: " + this.tagsTxt);
-        expensesRef.push(this.$store.state.currentExpenseObj);
         this.titleTxt = "";
         this.costTxt = "";
+        console.log("here: " + this.tagsTxt);
+        expensesRef.push(this.$store.state.currentExpenseObj);
+
       } else {
         this.modalDetails = this.failureModal;
       }
