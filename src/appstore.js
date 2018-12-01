@@ -29,19 +29,19 @@ export const appstore = {
 
     expenseStore: [
       {
-        desc: "lunch",
+        title: "lunch",
         cost: 120,
         date: "12/11/2018",
         tags: ["#biriyani", "#friends"]
       },
       {
-        desc: "football",
+        title: "football",
         cost: 1400,
         date: "13/11/2018",
         tags: ["#games", "#friends"]
       },
       {
-        desc: "recharge",
+        title: "recharge",
         cost: 399,
         date: "22/11/2018",
         tags: ["#data", "#personal"]
@@ -49,7 +49,7 @@ export const appstore = {
     ],
 
     currentExpenseObj: {
-      desc: "",
+      title: "",
       cost: "",
       date: "",
       tags: []
