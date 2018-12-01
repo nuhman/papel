@@ -6,8 +6,12 @@ import App from "./App";
 import { routes } from "./routes";
 import Vuex from "vuex";
 import { appstore } from "./appstore";
+import "./firebase";
+import VueFire from "vuefire";
 
 Vue.config.productionTip = false;
+
+Vue.use(VueFire);
 
 Vue.use(VueRouter);
 
