@@ -1,8 +1,8 @@
 <template>
   <div class="list-group">
     <div
-      v-for="(expense, index) in expenseStore"
-      :key="index"
+      v-for="expense in expenses"
+      :key="expense['.key']"
       class=" col-md-4 col-lg-4 col-sm-4"
     >
       <a
@@ -10,7 +10,7 @@
         class="list-group-item list-group-item-action flex-column align-items-start"
       >
         <div class="d-flex w-100 justify-content-between">
-          <h4 class="mb-1">{{ expense.desc }}</h4>
+          <h4 class="mb-1">{{ expense.title }}</h4>
           <small>{{ expense.date }}</small>
         </div>
         <p class="mb-1">Rs. {{ expense.cost }}</p>
@@ -23,6 +23,8 @@
 </template>
 
 <script>
+import { expensesRef } from "../../firebase";
+
 export default {
   props: {
     expenseStore: {
@@ -36,6 +38,9 @@ export default {
       btnText: "ADD",
       newExpense: {}
     };
+  },
+  firebase: {
+    expenses: expensesRef
   }
 };
 </script>
