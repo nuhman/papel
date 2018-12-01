@@ -51,6 +51,7 @@ export default {
     removeExpense(key) {
       expensesRef.child(key).remove();
     }
+
   }
 };
 </script>
