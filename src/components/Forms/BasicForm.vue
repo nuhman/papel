@@ -50,7 +50,7 @@ export default {
     return {
       titleTxt: "",
       costTxt: "",
-      tagsTxt: "s",
+      tagsTxt: "",
       tagToolTip: "Press `enter` or `return` to add a tag",
       successfulModal: {
         isSuccess: true,
@@ -88,10 +88,12 @@ export default {
         );
 
         this.modalDetails = this.successfulModal;
+
         this.titleTxt = "";
         this.costTxt = "";
         console.log("here: " + this.tagsTxt);
         expensesRef.push(this.$store.state.currentExpenseObj);
+
       } else {
         this.modalDetails = this.failureModal;
       }
