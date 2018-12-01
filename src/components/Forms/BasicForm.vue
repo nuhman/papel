@@ -2,7 +2,7 @@
   <div>
     <form class="form-group expenseForm">
       <BasicInput
-        v-model="descTxt"
+        v-model="titleTxt"
         placeholderTxt="Dinner at Avi's"
         labelTxt="Description"
       />
@@ -35,6 +35,7 @@ import TagInput from "../Inputs/TagInput";
 import DatePicker from "../Inputs/DatePicker";
 import ActionButton from "../Buttons/ActionButton";
 import modal from "../Modals/modal";
+import { expensesRef } from "../../firebase";
 
 export default {
   name: "BasicForm",
@@ -47,9 +48,9 @@ export default {
   },
   data: function() {
     return {
-      descTxt: "",
-      costTxt: "",
-      tagsTxt: "s",
+      titleTxt: this.$store.state.currentExpenseObj.title,
+      costTxt: this.$store.state.currentExpenseObj.cost,
+      tagsTxt: "",
       tagToolTip: "Press `enter` or `return` to add a tag",
       successfulModal: {
         isSuccess: true,
@@ -71,13 +72,13 @@ export default {
   methods: {
     addExpense: function() {
       if (
-        !!this.descTxt &&
+        !!this.titleTxt &&
         !!this.costTxt &&
         !!this.$store.state.currentExpenseObj.date
       ) {
         this.$store.commit("updateCurrentExpense", {
           ...this.$store.state.currentExpenseObj,
-          desc: this.descTxt,
+          title: this.titleTxt,
           cost: this.costTxt
         });
 
@@ -87,9 +88,11 @@ export default {
         );
 
         this.modalDetails = this.successfulModal;
-        this.descTxt = "";
-        this.costTxt = "";
+
         console.log("here: " + this.tagsTxt);
+        expensesRef.push(this.$store.state.currentExpenseObj);
+        this.titleTxt = "";
+        this.costTxt = "";
       } else {
         this.modalDetails = this.failureModal;
       }
