@@ -2,8 +2,10 @@
 
 > An expense manager in Vue.js  
   
-[Latest Demo](https://zllvlwxvvm.codesandbox.io)
-
+[Latest Demo](https://zllvlwxvvm.codesandbox.io)  
+  
+[Contribution Code Quality Guidelines](https://javascript.info/code-quality)
+  
 ## Build Setup
 
 ``` bash
