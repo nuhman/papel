@@ -4,7 +4,7 @@ let app, db, expensesRef;
 
 if (!firebase.apps.length) {
   app = firebase.initializeApp({
-    apiKey: "AIzaSyCpXXZq-uBef7wMXS5ZQ-zS6az9br33rqM",
+    apiKey: "putYaOwnApiKeyHere",
     authDomain: "papelproid.firebaseapp.com",
     databaseURL: "https://papelproid.firebaseio.com",
     projectId: "papelproid",
