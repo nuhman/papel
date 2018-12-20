@@ -38,15 +38,20 @@ export default {
   },
 
   methods: {
+   /**
+    * Updates the tags array in both the app store and local component state
+    *
+    * @param {Array} _tags: The tags array of the form ["tacos", "family", ...]    
+   */
     addTags: function(_tags) {
       this.tags = _tags;
       this.$store.state.currentExpenseObj.tags = [];
-
       let self = this;
+      
       this.tags.forEach(function(val) {
         self.$store.state.currentExpenseObj.tags.push("#" + val.text);
       });
-      //console.log(this.$store.state.cuurentExpenseObj.tags);
+      
     }
   }
 };
