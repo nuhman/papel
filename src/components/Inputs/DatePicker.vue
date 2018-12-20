@@ -8,12 +8,8 @@
 </template>
 
 <script>
-// Import this component
 import datePicker from "vue-bootstrap-datetimepicker";
-// Import Jquery
 import $ from "jquery";
-
-// Import date picker css
 import "pc-bootstrap4-datetimepicker/build/css/bootstrap-datetimepicker.css";
 
 export default {
@@ -32,12 +28,11 @@ export default {
     datePicker
   },
   mounted: function() {
-    // fires when the component is mounted for first time
-
-    // get a reference to `this`.
+    // fires when the component is mounted for first time    
+    
     var self = this;
 
-    // initialize state.currentExpenseObj.date
+    // initialize state.currentExpenseObj.date to current date
     this.$store.commit("updateCurrentExpense", {
       ...this.$store.state.currentExpenseObj,
       date: this.convertToDateTxt(self.date)
@@ -59,24 +54,28 @@ export default {
         });
       });
   },
+  
   methods: {
-    convertToDateTxt(today) {
-      // given a `Date()` object (para: today),
-      // returns a string representaion of
-      // the form `dd/mm/yyyy`.
-
+    
+   /**
+    * Returns string representation of the date (`dd/mm/yyyy`)
+    *
+    * @param {Date} today: todays date as a date object.  
+    */
+    convertToDateTxt(today) {      
       var dd = today.getDate();
       var mm = today.getMonth() + 1; //January is 0!
-
       var yyyy = today.getFullYear();
+      
       if (dd < 10) {
         dd = "0" + dd;
       }
+      
       if (mm < 10) {
         mm = "0" + mm;
       }
-      today = dd + "/" + mm + "/" + yyyy;
-      return today;
+      
+      return dd + "/" + mm + "/" + yyyy;      
     }
   }
 };
