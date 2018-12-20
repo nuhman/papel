@@ -2,9 +2,7 @@
 
 > An expense manager in Vue.js  
   
-[Latest Demo](https://zllvlwxvvm.codesandbox.io)  
-  
-[Contribution Code Quality Guidelines](https://javascript.info/code-quality)
+[Latest Demo](https://zllvlwxvvm.codesandbox.io)    
   
 ## Build Setup
 
@@ -27,3 +25,4 @@ npm run unit
 # run all tests
 npm test
 ```
+Refer: [Commenting Style](https://javascript.info/comments)
