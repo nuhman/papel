@@ -2,6 +2,8 @@
 
 > An expense manager in Vue.js  
   
+`papel` in spanish means `paper` (inspired from [`la casa de papel`](https://en.wikipedia.org/wiki/Money_Heist) 😄).
+  
 [Latest Demo](https://zllvlwxvvm.codesandbox.io)    
   
 ## Build Setup
