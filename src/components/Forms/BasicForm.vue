@@ -70,6 +70,11 @@ export default {
     };
   },
   methods: {
+   /**
+    * Update the current expense object in store
+    *
+    * TODO: refactor the bootstrap-modal code
+    */
     addExpense: function() {
       if (
         !!this.titleTxt &&
@@ -92,12 +97,12 @@ export default {
         this.titleTxt = "";
         this.costTxt = "";
         console.log("here: " + this.tagsTxt);
+        
         expensesRef.push(this.$store.state.currentExpenseObj);
 
       } else {
         this.modalDetails = this.failureModal;
-      }
-      return;
+      }      
     }
   }
 };
