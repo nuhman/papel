@@ -15,7 +15,7 @@
   "dependencies": {
     "@johmun/vue-tags-input": "1.5.10",
     "firebase": "5.5.9",
-    "jquery": "3.3.1",
+    "jquery": "3.5.0",
     "moment": "2.22.2",
     "vue": "^2.5.2",
     "vue-bootstrap-datetimepicker": "5.0.1",
